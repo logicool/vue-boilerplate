@@ -1,15 +1,18 @@
-$--color-primary: #fc7404;
+
+$--color-primary: #0099CC;
+$--color-text-primary: hsla(0, 0%, 100%, 0.8);
 
 // Navbar
 $navbar--background-color: $--color-primary;
 // breadcrumb
-$breadcrumb--color-text-dark: $--color-primary; // #be96cb;
+$breadcrumb--color-text-dark: hsl(0, 0%, 100%); // #be96cb;
 
 //container
+// $container--width-sidebar: 0;
 $container--width-sidebar: 200px;
-$container--background-color: $--color-primary;
+$container--background-color: #f2f2f2;
 // Sidebar
-$sidebar--background-color-dark: transparent;
+$sidebar--background-color-dark: #252628;
 $sidebar--color-text-dark: $--color-primary;
 
 // Content

@@ -2,6 +2,8 @@
 @import './_mixin.scss';
 @import './_transition.scss';
 @import './_element-ui.scss';
+@import './_customBtn.scss';
+@import './rightSideBar.scss';
 
 *,
 *:before,
@@ -13,7 +15,7 @@ body {
   font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
   font-size: 14px;
   line-height: 1.15;
-  color: #ffffff;
+  color: #b8b2b2;
   background-color: $container--background-color;
   height: 100%;
   // 文字抗锯齿和可读性优化
@@ -22,12 +24,12 @@ body {
   text-rendering: optimizeLegibility;
 
   // 尝试绚丽背景
-  background: 
-              // linear-gradient(-240deg, #7f9fae, transparent),
-              linear-gradient(90deg, #0c2a4c, transparent),
-              linear-gradient(-90deg, #9f949a, transparent);
+  // background: 
+  //             // linear-gradient(-240deg, #7f9fae, transparent),
+  //             linear-gradient(90deg, #0c2a4c, transparent),
+  //             linear-gradient(-90deg, #9f949a, transparent);
 
-  background-blend-mode: screen;
+  // background-blend-mode: screen;
 
   // background: linear-gradient(90deg, #0c2a4c 30%, #9f949a 70%)
 
@@ -35,6 +37,10 @@ body {
 }
 
 label {
+  font-weight: 700;
+}
+
+input {
   font-weight: 700;
 }
 
@@ -46,18 +52,32 @@ html {
 #app{
   height: 100%;
 
+
   // 侧边栏主体区域
   .main-container {
     min-height: 100%;
     transition: margin-left .28s;
     margin-left: $container--width-sidebar;
     .navbar.el-menu {
-      background-color: transparent;
+      background-color: $navbar--background-color;
       &.el-menu--horizontal {
         border-bottom: solid 1px #00000030;
       }
     }
   }
+  // .main-container {
+  //   min-height: calc(100% - 50px);
+  //   height: calc(100% - 50px);
+  //   transition: margin-left .28s;
+  //   margin-top: 50px;
+  //   margin-left: $container--width-sidebar;
+  //   .navbar.el-menu {
+  //     background-color: transparent;
+  //     &.el-menu--horizontal {
+  //       border-bottom: solid 1px #00000033;
+  //     }
+  //   }
+  // }
   // 侧边栏
   .sidebar-container {
     transition: width .28s;
@@ -71,7 +91,7 @@ html {
     z-index: 1001;
     overflow: hidden;
     
-    border-right: solid 1px #00000030;
+    border-right: solid 1px #00000033;
     border-bottom: none;
     
     //reset element-ui css
@@ -79,7 +99,7 @@ html {
       transition: 0s width ease-in-out, 0s padding-left ease-in-out, 0s padding-right ease-in-out;
     }
     .scrollbar-wrapper {
-      height: calc(100% + 15px);
+      overflow-x: hidden!important;
       .el-scrollbar__view {
         height: 100%;
       }
@@ -126,7 +146,7 @@ html {
       }
       .el-menu-item.is-active,
       .el-submenu.is-active .el-submenu__title {
-        color: mix(#fff, $sidebar--color-text-dark, 80%);
+        color: mix(#fff, $sidebar--color-text-dark, 60%);
       }
     }
     
@@ -249,6 +269,10 @@ div:focus{
 }
 
 .block {
+  display: block;
+}
+
+.inlineBlock {
   display: block;
 }
 

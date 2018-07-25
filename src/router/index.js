@@ -5,8 +5,6 @@ import { routerMode } from '@/utils/config'
 /* Layout */
 import Container from '@/views/container/Container'
 
-const _import = require('./_import_' + process.env.NODE_ENV)
-
 Vue.use(Router)
 
 /**
@@ -24,8 +22,8 @@ Vue.use(Router)
 
 export const constantRouterMap = [
   // { path: '/login', component: _import('login/index'), hidden: true },
-  { path: '/404', component: _import('errorPage/404'), hidden: true },
-  { path: '/401', component: _import('errorPage/401'), hidden: true },
+  { path: '/404', component: () => import('@/views/errorPage/404'), hidden: true },
+  { path: '/401', component: () => import('@/views/errorPage/401'), hidden: true },
   {
     path: '',
     component: Container,
@@ -36,13 +34,13 @@ export const constantRouterMap = [
     },
     children: [{
       path: 'dashboard',
-      component: _import('common/Home'),
+      component: () => import('@/views/common/Home'),
       name: 'home',
       meta: { title: '控制台', icon: '进行中', noCache: true }
     }, {
       path: 'svg',
       name: 'svg-demo',
-      component: _import('demo/svg-icons/index'),
+      component: () => import('@/views/demo/svg-icons/index'),
       meta: { title: 'SVG图标', icon: '图片', noCache: true }
     }]
   }
@@ -69,7 +67,7 @@ export const asyncRouterMap = [
       {
         path: 'svg',
         name: 'svg-demo',
-        component: _import('demo/svg-icons/index'),
+        component: () => import('@/views/demo/svg-icons/index'),
         meta: { title: 'SVG图标', icon: 'select_fill', noCache: true }
       }
     ]

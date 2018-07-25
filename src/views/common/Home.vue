@@ -34,10 +34,12 @@ export default {
 <style rel="stylesheet/scss" lang="scss" scoped>
 .home {
   &-container {
-    /deep/ .top {
-      fill: black;
-    }
-    margin: 30px;
+    height:calc(100% - 50px);
+    width:100%;
+    min-height: calc(100vh - 50px);
+    min-width: 100vw;
+    background: hsla(225, 36%, 19%, .9);
+    display: flex;
   }
   &-text {
     font-size: 30px;

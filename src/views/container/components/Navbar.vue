@@ -63,6 +63,11 @@ export default {
     height: 50px;
     float: left;
     padding: 0 10px;
+    color: #4265b1;
+    img.sat_dog_logo {
+      width: 100px;
+      height: 43px;
+    }
   }
   .breadcrumb-container{
     float: left;

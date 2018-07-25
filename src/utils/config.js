@@ -4,7 +4,7 @@
  * routerMode: 路由模式
  *
  */
-const baseUrl = 'http://39.104.101.245:8965' // 112.124.108.253 //39.104.101.245
+const baseUrl = '' // 112.124.108.253 //39.104.101.245
 const routerMode = 'hash' // history 后端支持的话可以开history模式去掉#
 
 export {

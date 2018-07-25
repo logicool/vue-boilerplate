@@ -1,0 +1,44 @@
+// 侧边栏
+.right-sidebar-container {
+  transition: width .28s;
+  width: 200px !important;
+  height: 100%;
+  position: fixed !important;
+  font-size: 0px;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1001;
+  overflow: hidden;
+  background: red;
+  border-left: solid 1px #00000030;
+  border-bottom: none;
+  //reset element-ui css
+  .horizontal-collapse-transition {
+    transition: 0s width ease-in-out, 0s padding-left ease-in-out, 0s padding-right ease-in-out;
+  }
+  .scrollbar-wrapper {
+    overflow-x: hidden!important;
+    .el-scrollbar__view {
+      height: 100%;
+    }
+  }
+  .is-horizontal {
+    display: none;
+  }
+  a {
+    display: inline-block;
+    width: 100%;
+    overflow: hidden;
+  }
+
+}
+.right-hideSidebar {
+  .right-sidebar-container {
+    width: 36px !important;
+  }
+  .main-container {
+    margin-left: 36px;
+  }
+
+}

@@ -1,4 +1,29 @@
  //覆盖一些element-ui样式
+div.el-popover__title {
+  height: 50px;
+  line-height: 50px;
+  font-weight: 600;
+  font-size: 24px;
+  margin-bottom: 0;
+}
+
+.el-input--mini {
+  
+  &.is-disabled {
+    input[disabled='disabled'] {
+      color:inherit;
+      background-color: #e7e7e7;
+      border-color: #cccccc;
+    }
+  }
+  & .el-input__inner {
+    padding: 0 5px;
+  }
+  & .el-textarea__inner {
+    font-weight: 700;
+    padding: 5px 5px;
+  }
+}
 
 .el-breadcrumb__inner, .el-breadcrumb__inner a {
   font-weight: 400!important;
@@ -14,10 +39,10 @@
 .el-breadcrumb .el-breadcrumb__inner{
   // color: $breadcrumb--color-text-dark;
   & > span.no-redirect{
-    color:mix(#fff, $breadcrumb--color-text-dark, 50%);
+    color:mix($--color-primary, $breadcrumb--color-text-dark, 50%);
   }
   & > a:hover{
-    color: mix(#fff, $breadcrumb--color-text-dark, 50%) !important;
+    color: mix($--color-primary, $breadcrumb--color-text-dark, 50%) !important;
   }
 }
 
@@ -108,4 +133,32 @@
     animation-timing-function: linear;
     animation-iteration-count: infinite;
   }
+}
+
+
+// table相关
+.el-table table th, .el-table table tr {
+  background-color: transparent;
+}
+.el-table--enable-row-hover .el-table__body tbody tr:hover>td {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+// .link-type,
+// .link-type:focus {
+//   color: hsla(0, 0%, 100%, 0.50);  //rgba(0,0,0,0.3)
+//   cursor: pointer;
+//   &:hover {
+//     color: hsla(206, 100%, 56%, 0.623);
+//   }
+// }
+
+// .pagination-container span.el-pagination__total, span.el-pagination__sizes, span.el-pagination__jump {
+//   color: $--color-text-primary
+// }
+
+
+// select相关
+li.el-select-dropdown__item {
+  height: auto;
 }

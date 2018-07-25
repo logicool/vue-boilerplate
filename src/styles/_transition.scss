@@ -1,3 +1,48 @@
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.zoomIn {
+  animation-name: zoomIn;
+}
+
+@keyframes zoomOut {
+  from {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.zoomOut {
+  animation-name: zoomOut;
+}
+
+/*bounce-animation*/
+.bounce-animation-enter-active {
+  animation-name: zoomIn;
+  animation-duration: .5s;
+}
+.bounce-animation-leave-active {
+  animation-name: zoomOut;
+  animation-duration: .5s;
+}
+
+
 /*fade*/
 .fade-enter-active,
 .fade-leave-active {
@@ -9,7 +54,21 @@
   opacity: 0;
 }
 
-/*breadcrumb fade*/
+/*fade-transform*/
+.fade-transform-leave-active,
+.fade-transform-enter-active {
+  transition: opacity .5s, transform .2s ease;
+}
+.fade-transform-enter {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+.fade-transform-leave-to {
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+/*breadcrumb transition*/
 .breadcrumb-enter-active,
 .breadcrumb-leave-active {
   transition: all .5s;

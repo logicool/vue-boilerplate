@@ -1,0 +1,190 @@
+// colors
+$blue:#4265b1;
+$light-blue:rgb(71, 142, 212);
+$red:#C03639;
+$pink: #E65D6E;
+$green: #00f7b9;
+$tiffany: rgb(96, 168, 156);
+$yellow:#FEC171;
+
+
+
+@mixin colorBtn($color) {
+  background: $color;
+  &:hover {
+    color: $color;
+    &:before,
+    &:after {
+      background: $color;
+    }
+  }
+}
+
+.blue-btn-1 {
+  @include colorBtn($blue)
+}
+
+.light-blue-btn-1 {
+  @include colorBtn($light-blue)
+}
+
+.red-btn-1 {
+  @include colorBtn($red)
+}
+
+.pink-btn-1 {
+  @include colorBtn($pink)
+}
+
+.green-btn-1 {
+  @include colorBtn($green)
+}
+
+.tiffany-btn-1 {
+  @include colorBtn($tiffany)
+}
+
+.yellow-btn-1 {
+  @include colorBtn($yellow)
+}
+
+.c-btn-1 {
+  font-size: 14px;
+  color: #fff;
+  padding: 14px 36px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  margin-right: 25px;
+  transition: 600ms ease all;
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  &:hover {
+    background: transparent;
+    &:before,
+    &:after {
+      width: 100%;
+      transition: 600ms ease all;
+    }
+  }
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 2px;
+    width: 0;
+    transition: 400ms ease all;
+  }
+  &:after {
+    right: inherit;
+    top: inherit;
+    left: 0;
+    bottom: 0;
+  }
+}
+
+
+@mixin colorBtn-2($color) {
+  color: $color;
+}
+
+.blue-btn-2 {
+  @include colorBtn-2($blue)
+}
+.light-blue-btn-2 {
+  @include colorBtn-2($light-blue)
+}
+.red-btn-2 {
+  @include colorBtn-2($red)
+}
+.pink-btn-2 {
+  @include colorBtn-2($pink)
+}
+.green-btn-2 {
+  @include colorBtn-2($green)
+}
+.tiffany-btn-2 {
+  @include colorBtn-2($tiffany)
+}
+.yellow-btn-2 {
+  @include colorBtn-2($yellow)
+}
+
+.c-btn-2 {
+  // color: #FC4D04;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  border: 2px solid currentcolor;
+  position: relative;
+  margin: 1rem 1rem;
+  padding: 0.5em 0.5em;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  cursor: pointer;
+  & svg {
+    width: 2rem;
+    height: 2rem;
+  }
+  & span {
+    margin-top: 5px;
+  }
+  &:before, &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    border-color: currentcolor;
+    box-sizing: border-box;
+    border-style: solid;
+    width: 1em;
+    height: 1em;
+    transition: all 0.3s ease-in-out;
+  }
+  &:before {
+    top: -6px;
+    left: -6px;
+    border-width: 2px 0 0 2px;
+    z-index: 5;
+  }
+  &:after {
+    bottom: -6px;
+    right: -6px;
+    border-width: 0 2px 2px 0;
+  }
+  &:hover:before,&:hover:after {
+    width: calc(100% + 12px);
+    height: calc(100% + 12px);
+    border-color: #fff;
+  }
+  &:hover {
+    color: #b8b2b2;
+    background-color: #fff;
+  }
+  &:active, &:focus {
+    outline: none;
+    color: #b8b2b2;
+    background-color: #fff;
+  }
+  &:focus:before, &:focus:after {
+    width: calc(100% + 12px);
+    height: calc(100% + 12px);
+    border-color: #fff;
+  }
+  
+  &.active{
+    color: #b8b2b2;
+    background-color: #fff;
+    &:before, &:after {
+      width: calc(100% + 12px);
+      height: calc(100% + 12px);
+      border-color: #fff;
+    }
+  }
+}
